@@ -325,8 +325,10 @@ For **custom sandboxes** or users the partner uploaded:
 - In the cases, PE first asked what's different from the partner's existing apps and what the flow needs before creating anything (03026882, 03078542).
 
 - For extra dev apps PE asks which existing dev app to clone from. Scopes can be enabled on dev and QA apps, and production scopes come after certification.
+- Older cases built new standalone SSO-only apps on request. That's no longer something to offer a new partner; new SSO comes with SSO + Rostering under Clever Complete. When a paying partner asks for another production app, PE asks for a dev app ID to clone and the new app name. Credentials then appear in the dashboard, redirect URIs need updating, and the go-live wizard finishes the launch. Some partner requests waited a week or more for a PE reply, so post in #partner-engineering rather than waiting.
+
 **Links:** https://dev.clever.com/docs/integration-types · https://dev.clever.com/docs/certification-overview
-**Source cases:** 02970842, 03067465, 03071230, 03078186, 03112608, 03051058, 03006650, 03003415, 03112110, 03066914, 03069447, 02986556, 03044842, 03068580, 03084751, 03079172, 02977824, 02980740, 03026882, 03078542, 03030653, 03035049
+**Source cases:** 02970842, 03067465, 03071230, 03078186, 03112608, 03051058, 03006650, 03003415, 03112110, 03066914, 03069447, 02986556, 03044842, 03068580, 03084751, 03079172, 02977824, 02980740, 03026882, 03078542, 03030653, 03035049, 03119360, 03121559, 03119591
 
 ---
 

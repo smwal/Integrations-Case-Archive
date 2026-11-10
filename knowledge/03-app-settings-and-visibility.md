@@ -144,8 +144,10 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 - The dev app keeps its "(DEV)" name and placeholder logo on purpose so it isn't confused with the production app. The real name and logo are applied to the production app created after certification. Don't promise to change the dev app (02998879).
 - A Library marketing-collateral page is a Library item. Route it to #partner-engineering (02984268).
 
+- A partner was told the icon must be a 200x200 PNG.
+
 **Links:** none confirmed
-**Source cases:** 02966962, 03058194, 03067876, 03079532, 03016268, 03016962, 03100150, 03028785, 03110315, 03105652, 02984268, 02998879
+**Source cases:** 02966962, 03058194, 03067876, 03079532, 03016268, 03016962, 03100150, 03028785, 03110315, 03105652, 02984268, 02998879, 03119360
 
 ---
 

@@ -170,8 +170,10 @@ CS owns the first round of triage on missing data. Do it thoroughly so the partn
 - Don't offer default term data. It isn't offered to partners.
 - "Terms depend on sections" in 03071081 is PE's own explanation. Don't present it as documented behavior.
 
+- When users drop out of the data at the start of a school year, a rollover can be the cause: a new-year file that differs a lot from last year's can be held for review before it's applied. Only PE can look up sync history for specific users.
+
 **Links:** https://dev.clever.com/docs/data-model-quirks-and-supported-features-district-integrations
-**Source cases:** 02978960, 03079913, 03089005, 03106690, 03001110, 03048729, 03071081, 03114942
+**Source cases:** 02978960, 03079913, 03089005, 03106690, 03001110, 03048729, 03071081, 03114942, 03107442
 ---
 
 ## ROS-06 · "A student field (IEP, ELL, FRL, home language, or a v3.1 field like disability status) isn't showing in the API or Data Browser"
@@ -200,8 +202,10 @@ CS owns the first round of triage on missing data. Do it thoroughly so the partn
 - Overlaps with SCP-01 (adding or removing scopes).
 - "Dashboard" can mean either the District Dashboard or the App Dashboard. Say which one you mean when you talk to a partner or district.
 
+- ELL, FRL, IEP and home language are sensitive fields. A field showing nil can mean the district isn't sharing it. Check the district's Field Access settings first (https://support.clever.com/hc/s/articles/360000501586). Districts see data warnings in their dashboards but get no email by default, so the partner should reach out to eligible districts.
+
 **Links:** https://dev.clever.com/docs/whats-new-in-api-v31 · https://dev.clever.com/docs/api-v31
-**Source cases:** 03087485, 03082606, 03061960, 03066534, 03002235, 03092879, 02981346, 03048944
+**Source cases:** 03087485, 03082606, 03061960, 03066534, 03002235, 03092879, 02981346, 03048944, 03119874, 03120253
 ---
 
 ## ROS-07 · "The API says the district state is 'running' but the dashboard says 'Successful'. Where did 'in-progress' go in v3?"

@@ -327,3 +327,53 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 
 **Links:** none confirmed
 **Source cases:** 03047343
+
+---
+
+## SCP-12 · "Students in some grades are blocked by a Data Quality Error (for example 'grades outside of K-8'). Can you change our grade requirement?"
+**Status:** Draft, needs PE review · **Resolvable by CS:** Triage only, PE removes the error
+
+**When to use this**
+The app dashboard shows a data error for a district because students fall outside the grade range the app accepts, and the partner wants the error removed so all records are shared.
+
+**Answer / steps**
+1. Confirm the error name in the app dashboard and which district(s) it affects.
+2. District filters and sharing rules (Settings > District Setup) don't clear this error. The data error itself has to be removed by PE.
+3. Get the partner's written confirmation that they want the error removed and can handle the extra grades.
+4. Post in #partner-engineering with the case number, app, district and the partner's confirmation. After PE removes it, the district's records are shared with the app.
+
+> Thanks for the details. I've confirmed the grade-range error is what's holding back those students. Our Partner Engineering team can remove it, but we need your written confirmation that your app can accept students in all grades. Once you reply, I'll send it over.
+
+**Escalate if…**
+- Always, once the partner confirms.
+
+**Notes / conflicts**
+- Don't promise a date. In the case read, it was done the same day after the confirmation.
+- An early reply pointed only to district filters; the partner correctly pushed back that data errors go through Clever Support.
+
+**Links:** https://support.clever.com/hc/s/articles/215806337
+**Source cases:** 03120824
+
+---
+
+## SCP-13 · "Staff or school admins aren't being delivered to our app"
+**Status:** Draft, needs PE review · **Resolvable by CS:** Yes
+
+**When to use this**
+A partner (usually on a dev app and sandbox) gets teachers and students but no staff or school admin records.
+
+**Answer / steps**
+1. In the App Dashboard, go to Settings > Integration > Additional Settings > Supported User Types > Edit and add Staff.
+2. If staff still don't arrive, go to Settings > Data Access > School Admin Record > Edit Required and add Email as a required field.
+3. Ask the partner to check sync status again (a sync can take up to 15 minutes).
+
+> Staff records only come through when Staff is selected under Supported User Types, and school admin records need an email. Please check Settings > Integration > Supported User Types and add Staff, then under Settings > Data Access > School Admin Record make Email required. Let us know if they don't appear after the next sync.
+
+**Escalate if…**
+- Both settings are right and records are still missing for all districts.
+
+**Notes / conflicts**
+- After uploading custom data to a sandbox, a sync hold is expected.
+
+**Links:** https://dev.clever.com/docs/custom-sandbox-districts
+**Source cases:** 03119696

@@ -63,8 +63,10 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 - One ASM asked partners to commit to v3.1 by tying it to a v2 end date. Never repeat deadline language.
 - See ROS-06 for which fields are gated by scopes and which by v3.1.
 
+- A "Version Not Supported" error on one app after v3.1 was turned on for others usually means that app's client ID was missed. PE enables v3.1 per app, so confirm each client ID.
+
 **Links:** https://dev.clever.com/docs/api-v31 · https://dev.clever.com/docs/api-v3-upgrade-guide
-**Source cases:** 03007759, 03009671, 03051380, 03081977, 03083377, 03116247
+**Source cases:** 03007759, 03009671, 03051380, 03081977, 03083377, 03116247, 03119332
 
 ---
 

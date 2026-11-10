@@ -36,8 +36,10 @@ Both of these turned out to be bugs reported to Engineering. Ask for the **assig
 - LTI 1.3 SSO is documented for Canvas and Schoology only. Roadmap questions go to PE (03004551).
 - A Schoology SSO link that returned 403 worked once the redirect URI moved off localhost (03003437). Certification and go-live questions go to #partner-engineering.
 - PE said LTI 1.3 SSO is supported for Canvas and Schoology, not Google Classroom (02986857, an older case).
+- Grade passback prerequisites (one set of endpoints works for Google Classroom, Canvas and Schoology): API v3.1, a Clever Complete agreement, a working Secure Sync integration, district approval of the LMS Connect request, and the LMS fields enabled for the app. Before assignment calls, the district should show an `lms_state` of success and the section `lms_status.synced_in_lms` true (not needed for rostering). Each LMS has its own rules: Google Classroom needs the district's Google Classroom integration and the teacher accepting the class; Schoology needs `term_id`, LTI 1.3 SSO and a grading category; Canvas blocks submissions on unpublished assignments. A district connects to one LMS, so testing all three takes three separate sandboxes (PE can set these up).
+
 **Links:** https://dev.clever.com/docs/lms-connect-overview · https://dev.clever.com/docs/core-concepts · https://dev.clever.com/docs/api-reference · https://dev.clever.com/docs/lms-connect-lti-13-sso · https://dev.clever.com/docs/clever-lms-connect-api-errors
-**Source cases:** 02986857, 03003437, 03061720, 03003970, 03004551, 03090084, 02980073, 03011938, 03002050, 02998947, 03073230
+**Source cases:** 02986857, 03003437, 03061720, 03003970, 03004551, 03090084, 02980073, 03011938, 03002050, 02998947, 03073230, 03118021
 
 ---
 
@@ -295,8 +297,10 @@ Both of these turned out to be bugs reported to Engineering. Ask for the **assig
 - See ROS-05 for missing data in general. The "no active academic sessions" message was only visible internally.
 
 - If a customer says setup is done but no data arrives, first check that the email invite was actually sent to the district contact (03087006).
+- Sync fails with "Invalid API URL" for a OneRoster 1.2 SIS source usually means the school entered a stale or wrong Base URL. The school, not the partner, enters the Client ID, Client Secret, Token URL and full Base URL in the AnySchool setup wizard. Fix: the partner resends the AnySchool invite from its dashboard, school IT opens the link (check spam), picks the SIS, enters the 1.2 values and submits. Syncs then run automatically. Never ask for the Client Secret; ask for a screenshot and the Base URL only.
+
 **Links:** none confirmed
-**Source cases:** 03087006, 03089005, 03108215, 03071239
+**Source cases:** 03087006, 03089005, 03108215, 03071239, 03117321
 
 ---
 

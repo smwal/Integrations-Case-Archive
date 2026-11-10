@@ -1,6 +1,6 @@
 # Files to upload to the Claude project
 
-Last updated: Nov 3, 2026, after the full backfill and the test-set run.
+Last updated: Nov 9, 2026, after the weekly run.
 
 Nearly every knowledge file changed, so replace them all.
 
@@ -10,6 +10,16 @@ Nearly every knowledge file changed, so replace them all.
 3. Open `PROJECT_INSTRUCTIONS.md`, copy everything below the line, and paste it into the project's Instructions field (replace the old text).
 4. Run the questions in `TEST_SET.md` in fresh chats and have a PE grade a few.
 5. Have PE review the entries. Every entry is marked "Draft, needs PE review" until then.
+
+## Pending upload (weekly run Nov 9, 2026)
+- 01-sandbox-and-dev-accounts.md
+- 02-scopes-and-data-access.md
+- 03-app-settings-and-visibility.md
+- 04-sso-and-oidc.md
+- 05-rostering-and-secure-sync.md
+- 07-api-versions.md
+- 08-lms-connect-library-anyschool.md
+- 99-emerging-topics.md
 
 ## Upload (knowledge/)
 - 00-current-policies.md

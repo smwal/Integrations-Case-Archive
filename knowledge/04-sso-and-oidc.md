@@ -200,7 +200,7 @@ Related: if Portal launches work but the partner's "Log in with Clever" button s
 - "redirect_uri is not valid" usually means the URI isn't listed on the app. Add it under Settings > Integration. The first URI in the list is the one used for Portal logins, so change the order if a dev app's Portal login goes to the wrong place. For two apps with different landing pages, route users from one URI or build two separate app integrations (PE-level, not confirmed).
 - For a multi-tenant app with a subdomain per school, PE recommended one general redirect URI and routing users after login (02978060). Redirect URIs can be edited under the app's Settings > Integration (03081955).
 **Links:** https://dev.clever.com/docs/oauth-implementation
-**Source cases:** 02978060, 03081955, 02970975, 02988644, 02969222, 03004185, 03045189, 02976643, 03000191, 03076701, 03086261, 03088204, 02983219
+**Source cases:** 02978060, 03081955, 02970975, 02988644, 02969222, 03004185, 03045189, 02976643, 03000191, 03076701, 03086261, 03088204, 02983219, 03121844
 
 ---
 
