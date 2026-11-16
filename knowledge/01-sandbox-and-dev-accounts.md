@@ -30,7 +30,7 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
    - An alias is fine, for example name+sandbox@company.com. For several sandboxes, use one alias each (`+sandbox1`, `+sandbox2`, …).
    - If the partner tried to add an admin themselves and got **"This district admin already exists"**, the email is already in use. PE re-adds it with an alias.
 5. Once they're an admin, they can add more admins themselves. See the Help Center article "Clever Roles: Clever Admin".
-6. **The person who has app dashboard access but not sandbox access** can also be added under **Team > Add Team Member** on the app dashboard (that's dashboard access, not sandbox admin). CS can do this: in Hall Monitor, impersonate an existing team member and add the person on the Team page (see SBX-14).
+6. **The person who has app dashboard access but not sandbox access** can also be added under **Team > Add Team Member** on the app dashboard (that's dashboard access, not sandbox admin). CS can do this: in Hall Monitor, impersonate an existing team member and add the person on the Team page (see SBX-14 and SBX-17).
 
 **Escalate if…**
 - The sandbox has no working admin, or the developer wants a new or second sandbox, or a sandbox renamed.
@@ -327,8 +327,9 @@ For **custom sandboxes** or users the partner uploaded:
 - For extra dev apps PE asks which existing dev app to clone from. Scopes can be enabled on dev and QA apps, and production scopes come after certification.
 - Older cases built new standalone SSO-only apps on request. That's no longer something to offer a new partner; new SSO comes with SSO + Rostering under Clever Complete. When a paying partner asks for another production app, PE asks for a dev app ID to clone and the new app name. Credentials then appear in the dashboard, redirect URIs need updating, and the go-live wizard finishes the launch. Some partner requests waited a week or more for a PE reply, so post in #partner-engineering rather than waiting.
 
+- For a new product added to an existing contract, PE created the dev app and invited the admins, then offered to either connect an existing sandbox from another of the partner's apps or create a new sandbox with Clever's demo dataset (or the partner's own files). A new sandbox needs an admin email not used on any other Clever account; aliases are fine (03119478).
 **Links:** https://dev.clever.com/docs/integration-types · https://dev.clever.com/docs/certification-overview
-**Source cases:** 02970842, 03067465, 03071230, 03078186, 03112608, 03051058, 03006650, 03003415, 03112110, 03066914, 03069447, 02986556, 03044842, 03068580, 03084751, 03079172, 02977824, 02980740, 03026882, 03078542, 03030653, 03035049, 03119360, 03121559, 03119591
+**Source cases:** 02970842, 03067465, 03071230, 03078186, 03112608, 03051058, 03006650, 03003415, 03112110, 03066914, 03069447, 02986556, 03044842, 03068580, 03084751, 03079172, 02977824, 02980740, 03026882, 03078542, 03030653, 03035049, 03119360, 03121559, 03119591, 03119478
 
 ---
 
@@ -464,7 +465,7 @@ If the partner wants a new dev app or a clone, use SBX-08 to collect the details
 - An older case (03007602) showed PE creating a new SSO-only dev app and sending an SSO certification link. Older cases did that, but it's no longer the process.
 - In one case (03082211) PE recommended a region-specific SSO and Rostering app and said other partners had done the same. PE also asked whether the new app would use the same integration methods and code base as the existing one.
 - In another case (03073417) PE suggested unpaid users could sign in another way (for example Google) through an external link teachers add to their portal. The final outcome isn't visible, so treat it as an observation, not a rule.
-- One thread (03082211) included a deprecation date quoted by an ASM newsletter. Never repeat dates.
+- One thread (03082211) included a deprecation date quoted by an ASM newsletter. Don't repeat it. The only date to give is that v2 sunsets in January 2028.
 
 **Links:** https://dev.clever.com/docs/integration-types · https://dev.clever.com/docs/certification-overview
 **Source cases:** 03059935, 03003835, 03073417, 03082211, 03007602, 03074461
@@ -504,16 +505,18 @@ If the partner wants a new dev app or a clone, use SBX-08 to collect the details
 **Answer / steps**
 1. Get the client ID or app name and the exact emails to add.
 2. CS adds the new team members. In Hall Monitor, impersonate one of the existing team members, then add the new members on the Team page.
-3. Each admin email must be unique across all Clever district and app accounts. If someone already has another Clever account, use an alias (plus addressing is fine).
+3. The same email can be a team member on more than one app. The person has one login and switches between their apps with the dropdown at the top of the App Dashboard. Clever needs one unique email per real person, not one per app, so don't ask for an alias just because the email is already on another app. An alias is only needed when the email is already used on a different kind of Clever account, such as a sandbox or district admin account (see SBX-01).
 4. For an app that isn't certified, remind them that real districts can't see it until certification.
 5. If you have questions, or anything about the request looks suspicious, ask the ASM in #app-success on Slack to confirm it's a valid request.
 
-> We've added the email addresses you sent to your app account. Each email has to be unique across Clever accounts, so an alias works if someone already has another Clever login. Let us know if you have any trouble signing in.
+> We've added the email addresses you sent to your app account. If someone is already on another of your apps, they'll switch between apps using the dropdown at the top of the App Dashboard. Let us know if you have any trouble signing in.
 
 **Escalate if…**
 - The request looks suspicious: ask the ASM in #app-success before adding anyone.
 
 **Notes / conflicts**
+- If an existing dev partner just wants a different or additional email added to a dev app (the owner hasn't left), see SBX-17.
+- The "unique email" rule is per real person, not per app. The same email can be a team member on several apps and the person switches between them with the dropdown at the top of the App Dashboard. Aliases are for sandbox and district admin accounts (SBX-01).
 - Historically Clever hasn't verified app partners for this, because they usually just need dev access. For adding people on the dashboard Team page, see DSH-03.
 
 **Links:** none confirmed
@@ -539,8 +542,9 @@ If the partner wants a new dev app or a clone, use SBX-08 to collect the details
 **Notes / conflicts**
 - The partner asked for 24-hour turnaround. Don't promise timing.
 
+- In 03097165 PE offered to upload a district's latest files to a partner's sandbox with the district's written consent. That conflicts with this entry. Don't offer it; ask in #partner-engineering if a partner asks.
 **Links:** none confirmed
-**Source cases:** 03074646
+**Source cases:** 03074646, 03097165
 
 ---
 
@@ -562,3 +566,41 @@ If the partner wants a new dev app or a clone, use SBX-08 to collect the details
 
 **Links:** https://apps.clever.com/signup
 **Source cases:** 03082190
+
+---
+
+## SBX-17 · "Please update my developer login so I can use Clever login on another site" (or "add a different email to my dev app")
+**Status:** Draft, needs PE review · **Resolvable by CS:** Yes. CS adds the email as a team member. PE is not needed.
+
+**When to use this**
+- A partner who already has a dev app asks to "update", "change" or "switch" their developer login or email, or asks to be added with a different email, usually so they can build or test on another project or site.
+- The partner's current email is already used for a dev app, possibly for another project or organization.
+- Treat it as "add this email to the dev app". Don't treat it as a request to change or replace the existing login.
+
+**Answer / steps**
+1. Ask for the **client ID of the dev app** the email should be added to, and the **exact email** they want to use.
+2. Find the app in Hall Monitor by client ID.
+3. Impersonate an existing team member of that app, then add the requested email on the **Team** page (same steps as SBX-14).
+4. The partner can use the same email they already use on another app. That person has one login and switches between apps with the dropdown at the top of the App Dashboard. Clever needs one unique email per real person, not one per app, so don't ask for an alias. Only ask for one if the email is already used on a different kind of Clever account, such as a sandbox or district admin account (SBX-01).
+5. Send the reply below.
+6. If the partner has no dev app for the new project yet and wants one, use SBX-08 for that part.
+
+> Thanks for reaching out! To get this set up, could you send me (1) the client ID of the dev app you'd like to use, and (2) the exact email address you'd like added to it?
+
+After the email is added:
+> We've added <email> to your app. If this email is also on another of your apps, you can switch between them using the dropdown at the top of the App Dashboard. Let us know if you have any trouble getting in.
+
+**Escalate if…**
+- Not required. If something about the request looks suspicious, or you have questions, you can ask in #partner-engineering on Slack. This is optional.
+
+**Notes / conflicts**
+- Don't run the new-partner routing (paying-customer check, application-interest@clever.com) or the Clever Complete rules for this request. The partner already has a dev app and is asking for access. The new-partner rules apply if the request turns into a new integration or a new dev app (SBX-08, SBX-10).
+- One email works across many apps. The App Dashboard has a dropdown at the top for switching between the apps a person is a team member on. A unique email is required per real person, not per app.
+- If a partner's email on a team member record changes, the only effect is that they sign in with the new email instead of the old one. This applies to every app where their email is on the team members page. Don't say anything beyond that about what a change would affect.
+- CS adds a team member and doesn't edit or replace the partner's existing login. The archive doesn't say whether CS can change an existing team member's email, so check with #partner-engineering if the partner really wants the old email replaced.
+- The alias rule in SBX-01 and SBX-03 is for sandbox and district admin accounts. Don't apply it to app team members.
+- SBX-14 says to ask the ASM in #app-success when a request looks suspicious. PE's Nov 16, 2026 answer for this scenario was #partner-engineering, optional. PE should confirm which channel to use for each.
+- This entry comes from PE feedback on a wrong answer, not from a resolved case.
+
+**Links:** none confirmed
+**Source cases:** PE feedback, Nov 16, 2026 (no case number)

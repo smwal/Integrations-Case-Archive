@@ -61,6 +61,15 @@ Also record: which entry ID(s) the answer cited, and whether the partner reply c
 
 ---
 
+## D. Regression cases from feedback
+
+| # | CS agent asks | Key points a correct answer must include | Must NOT |
+|---|---|---|---|
+| D1 | An existing dev partner emailed: they use one email as their developer login for another organization's app, and want it updated so they can build Clever login for a new website. Salesforce case, what do I do? Send it to PE? [SBX-17] | Ask for the client ID of the dev app and the email to use. Find the app in Hall Monitor, impersonate an existing team member, add the email on the Team page. The partner can reuse the email they already have on another app, with no alias needed. The partner switches apps with the dropdown at the top of the App Dashboard. CS handles it. Asking in #partner-engineering is optional if something looks off. | Route to PE as the default. Run the paying-customer or Clever Complete checks. Ask for an alias. Say changing the login would move or affect another app's access. Tell the partner PE will follow up |
+| D2 | A partner asks: "If you change my login email, will it affect my other app?" | The only effect is that they sign in with the new email instead of the old one, in every app where their email is on the team members page. Nothing more is claimed. If the partner wants the old email replaced rather than a new one added, says the archive doesn't cover how CS does that and suggests #partner-engineering. | Claim any effect beyond the login change, such as lost access, moved ownership or a security risk |
+
+---
+
 ## Results log
 | # | Correct | Usable | Owner | No policy talk | Gaps | Entry cited | Notes / fix needed |
 |---|---|---|---|---|---|---|---|

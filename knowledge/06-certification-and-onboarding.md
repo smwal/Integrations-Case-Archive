@@ -32,8 +32,9 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 - Many reviews stall because PE asked the partner for SSO test users. If PE's last message on the case is waiting on the partner, mention that in Slack.
 - Never ask for passwords or secrets. Don't ask the partner for test users or a screen recording yourself for certification. Post in #partner-engineering and let PE ask for anything it needs.
 
+- A partner asked about a checkbox on the certification form (an AnySchool acknowledgement they said shouldn't apply to their app). PE's first step was to ask which app name the submission was under. Treat questions about the form's contents like any other certification question: reply and post in #partner-engineering (03121326).
 **Links:** https://dev.clever.com/docs/certification-overview
-**Source cases:** 03053659, 03002826, 03085951, 03081128, 03044326, 03049028, 03116382, 03033146, 03012887, 02972586, 02993813, 02986833, 03055116, 03053848, 02992053, 03009312, 02994520, 03065938
+**Source cases:** 03053659, 03002826, 03085951, 03081128, 03044326, 03049028, 03116382, 03033146, 03012887, 02972586, 02993813, 02986833, 03055116, 03053848, 02992053, 03009312, 02994520, 03065938, 03121326
 
 ---
 
@@ -71,8 +72,10 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 - Don't link the dev docs "Certification Types" page. It still describes Library and standalone SSO certifications, which is outdated: Library isn't certifying new apps and standalone SSO-only isn't offered to new partners.
 - Certification ISD testing is for the partner's own validation. They don't send results to Clever. Supporting every edge case isn't required but is strongly recommended (03053971).
 
+- How PE ran an SSO review (03097165): PE logs in as sandbox users with "Login As", so the partner only lists the Clever IDs of users that should work. No usernames or passwords are needed. PE needs to see which account it landed in (the user's name or email) to match it to the Clever user. PE reviewed in the partner's own sandbox, on whichever environment the partner chose. This is PE's process; CS doesn't relay it as a checklist or ask for test users.
+- In 03097165 and 03121590 an account manager and PE sent the certification form link directly. CS still doesn't send it.
 **Links:** https://dev.clever.com/docs/certification-overview · https://dev.clever.com/docs/secure-sync-certification-guide · https://dev.clever.com/docs/sync-testing · https://dev.clever.com/docs/testing-your-sso-integration · https://dev.clever.com/docs/going-live
-**Source cases:** 03082113, 03084290, 03081128, 03105227, 03078199, 03048588, 03045627, 03011850, 03033146, 03070862, 03037961, 02975347, 03039515, 03050218, 03053971, 03051064, 03013127, 03034828, 03048861
+**Source cases:** 03082113, 03084290, 03081128, 03105227, 03078199, 03048588, 03045627, 03011850, 03033146, 03070862, 03037961, 02975347, 03039515, 03050218, 03053971, 03051064, 03013127, 03034828, 03048861, 03097165, 03121590
 
 ---
 
@@ -105,8 +108,10 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 - The cases don't say how long going live takes. Don't promise timing.
 - The launch date only controls when users see the app in their Clever Portals. It doesn't affect whether data syncs or logins work (03101235).
 
+- The production app is a new app cloned from the dev app, with different client credentials. The partner updates the credentials in its own config. A sandbox connected to the dev app was also connected to the production app after certification (03097165).
+- A dev app can't be connected to a live district. When a partner wanted to test with a specific district's data before going live, PE offered two options: the district sets the app's launch date in the future (data syncs before users see it), or, with the district's written consent, PE uploads the district's latest files to the partner's sandbox. That second option conflicts with SBX-15 (no production data in a sandbox), so don't offer it; post in #partner-engineering (03097165).
 **Links:** https://support.clever.com/hc/s/articles/215120718 · https://dev.clever.com/docs/going-live
-**Source cases:** 03048873, 03082752, 03049028, 03009840, 03003347, 03002826, 03004833, 03012298, 03011868, 03004464, 02998782, 03004966, 03081128, 03085951, 03045627, 03101235, 02992053, 02994520, 03009312, 03016190, 03025016, 02981410
+**Source cases:** 03048873, 03082752, 03049028, 03009840, 03003347, 03002826, 03004833, 03012298, 03011868, 03004464, 02998782, 03004966, 03081128, 03085951, 03045627, 03101235, 02992053, 02994520, 03009312, 03016190, 03025016, 02981410, 03097165
 
 ---
 
@@ -145,7 +150,7 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 
 **Notes / conflicts**
 - Don't ask the partner for test users' Clever IDs or a screen recording for certification. PE asks for those. Never ask for passwords. In one case the partner emailed passwords unprompted and nobody flagged it.
-- Don't describe v2 as "valid". It's deprecated for new apps, and don't quote any dates.
+- Don't describe v2 as "valid". It's deprecated for new apps. The only date to give is that v2 sunsets in January 2028; don't quote any other dates.
 - **Clever ID as the primary key** is now a certification blocker. Two May 2025 cases accepted email-keyed apps with caveats; don't treat those as precedent.
 
 **Links:** https://dev.clever.com/docs/secure-sync-certification-guide · https://dev.clever.com/docs/users · https://dev.clever.com/docs/security
@@ -285,8 +290,9 @@ These are answers PE gave in these cases. CS can relay them, but have PE review 
 - 03039515 and 02967271 are about SSO-only apps. For a new partner today, see CRT-06.
 
 - Sandbox walkthrough students log in with the student number from the walkthrough article, not a username and password (03058165). PE sends the district SSO testing page for test users: https://dev.clever.com/docs/testing-district-sso
+- A partner asked for a non-sandbox "production" account for release smoke tests. Support's answer was to use the sandbox: anything they'd test in production can be tested there, without real student data (03122121).
 **Links:** https://dev.clever.com/docs/testing-your-sso-integration · https://dev.clever.com/docs/data-model-quirks-and-supported-features-district-integrations · https://dev.clever.com/docs/custom-sandbox-districts · https://dev.clever.com/docs/sync-testing
-**Source cases:** 03049679, 03058165, 02991266, 03004263, 03009813, 02980147, 02967271, 02986833, 03000301, 03014479, 03021665, 03039515, 03053971, 03074141, 02978791
+**Source cases:** 03049679, 03058165, 02991266, 03004263, 03009813, 02980147, 02967271, 02986833, 03000301, 03014479, 03021665, 03039515, 03053971, 03074141, 02978791, 03122121
 
 ---
 
@@ -411,7 +417,7 @@ Don't answer the details. Routing the partner to PE right away is a better exper
 
 - AnySchool data has the same format as any other district on the Data API. Mappings and extension fields aren't supported. Clever can't take a ClassLink roster upload directly, so use AnySchool with ClassLink as the source. For CSV, the district re-uploads both files each time and keeps the same user_id so Clever IDs persist. At least one student is required in users.csv (PE-stated, may be a product gap). For a non-ClassLink-partner app, ClassLink districts can export OneRoster files to SFTP (recommended) or create a custom ClassLink app. AnySchool should be on by default for production apps with Secure Sync, so check scopes before asking PE to enable it. Don't relay billing details.
 **Links:** https://dev.clever.com/docs/integration-types · https://dev.clever.com/docs/getting-started
-**Source cases:** 03069044, 03062675, 03066248, 03070432, 03086444, 03058452, 03108950, 03092064, 03114830, 02978264, 02997596, 03002906
+**Source cases:** 03069044, 03062675, 03066248, 03070432, 03086444, 03058452, 03108950, 03092064, 03114830, 02978264, 02997596, 03002906, 03118124
 
 ---
 
@@ -438,8 +444,10 @@ Don't answer the details. Routing the partner to PE right away is a better exper
 - The app also needs v3.1 enabled. Without it the attendance endpoint returns "app is not authorized to access API version v3.1" (03060358).
 - For attendance testing, PE uploaded an attendance.csv to a partner's sandbox with a student under 90% attendance (03073025). That's a PE task.
 - For attendance testing a dev app is connected to a Clever-owned attendance test district. The partner's own sandbox district can't be used (03005425).
+- Pulling attendance through the API needs v3.1 calls. When a partner said a district was sending attendance, PE checked and the district wasn't syncing attendance yet, so PE looped in the district's account manager and connected Clever's attendance test sandbox to the partner's dev app in the meantime (03122505). CS can check whether a district has attendance data, but connecting the test sandbox is a PE task.
+- Tardies are part of the attendance data. A partner also asked about writing tardies back to the SIS; the thread doesn't answer whether write-back is supported, so don't promise it (03121615).
 **Links:** https://dev.clever.com/docs/attendance-data-how-does-it-work · https://dev.clever.com/docs/attendance-data-overview
-**Source cases:** 03002577, 03005425, 03014378, 03061489, 03073025, 03060358, 03000751, 03000752, 03000753, 03002103, 03003915
+**Source cases:** 03002577, 03005425, 03014378, 03061489, 03073025, 03060358, 03000751, 03000752, 03000753, 03002103, 03003915, 03122505, 03121615
 
 ---
 

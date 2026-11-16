@@ -1,6 +1,6 @@
 # Files to upload to the Claude project
 
-Last updated: Nov 9, 2026, after the weekly run.
+Last updated: Nov 16, 2026, after the weekly run.
 
 Nearly every knowledge file changed, so replace them all.
 
@@ -10,6 +10,21 @@ Nearly every knowledge file changed, so replace them all.
 3. Open `PROJECT_INSTRUCTIONS.md`, copy everything below the line, and paste it into the project's Instructions field (replace the old text).
 4. Run the questions in `TEST_SET.md` in fresh chats and have a PE grade a few.
 5. Have PE review the entries. Every entry is marked "Draft, needs PE review" until then.
+
+## Pending upload (weekly run Nov 16, 2026)
+- 00-current-policies.md (API versions section: v2 sunset date added)
+- Re-paste PROJECT_INSTRUCTIONS.md (v2 sunset date rule)
+- 01-sandbox-and-dev-accounts.md
+- 03-app-settings-and-visibility.md
+- 04-sso-and-oidc.md
+- 05-rostering-and-secure-sync.md
+- 06-certification-and-onboarding.md
+- 07-api-versions.md
+- 99-emerging-topics.md
+
+## Pending upload (feedback fix Nov 16, 2026)
+- 01-sandbox-and-dev-accounts.md (new SBX-17, cross-links in SBX-01 and SBX-14)
+- Re-paste PROJECT_INSTRUCTIONS.md (new rules 7 and 8, rule 4 tightened)
 
 ## Pending upload (weekly run Nov 9, 2026)
 - 01-sandbox-and-dev-accounts.md

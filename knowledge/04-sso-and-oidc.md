@@ -334,7 +334,7 @@ Example of what the `roles` object looks like on a user (values shortened). Here
 
 - OIDC today is only for logging in to apps with Clever. Using a partner's SIS as the identity provider into Clever isn't supported. Say "not supported today, thanks for the feedback" and log the feedback in Salesforce (03004197).
 **Links:** https://dev.clever.com/docs/oidc-implementation · https://dev.clever.com/docs/example-oauth-walkthrough
-**Source cases:** 02969041, 02981411, 03012621, 02991207, 03004197, 03061491, 02967380, 02969208, 03048334, 03058636, 02991266, 03066996, 02993417, 03070137, 02993919, 03068702, 03073263, 03003713, 03004263, 03004910, 03006758, 03007053
+**Source cases:** 02969041, 02981411, 03012621, 02991207, 03004197, 03061491, 02967380, 02969208, 03048334, 03058636, 02991266, 03066996, 02993417, 03070137, 02993919, 03068702, 03073263, 03003713, 03004263, 03004910, 03006758, 03007053, 03122157
 
 ---
 

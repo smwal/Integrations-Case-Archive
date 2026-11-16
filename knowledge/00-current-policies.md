@@ -2,7 +2,7 @@
 
 These are the current Developer Support policies. **They override any older guidance in other entries or in past cases.** If a case entry contradicts this file, follow this file and flag the conflict.
 
-Last confirmed: October 21, 2026, during the Developer Support Guru review, from the public docs at dev.clever.com. POL-06 updated October 27, 2026 (v2 certification and new apps).
+Last confirmed: October 21, 2026, during the Developer Support Guru review, from the public docs at dev.clever.com. POL-06 updated October 27, 2026 (v2 certification and new apps) and November 16, 2026 (v2 sunset date: January 2028).
 
 ---
 
@@ -51,10 +51,11 @@ Also:
 ## POL-06 · API versions
 - **v3.1 is the current version.** It only adds non-breaking changes to v3.0, mainly new student demographic fields.
 - **New apps get v3.0 by default. v3.1 is turned on by request**: transfer to PE, and loop in the ASM if the partner has one.
-- **v2.x is deprecated.** New apps can't use it. Existing apps are still supported, and Clever is moving partners from v2 to v3.
+- **v2.x is deprecated.** New apps can't use it. Existing apps are still supported until the sunset, and Clever is moving partners from v2 to v3.
+- **Sunset date: January 2028.** v2 (including v2.0 and v2.1) will be sunset in January 2028 (confirmed Nov 16, 2026). This is the only date to give, and only as "January 2028". Don't give an exact day, and don't promise anything beyond what's stated here.
 - **Clever no longer certifies apps built on v2.** Partners on v2 need to move to v3 before certification.
 - **v2.0 and v2.1 aren't added to new apps.** Only v3.0 is added automatically. Some older apps still have v2 access. Don't offer to add v2 to a new app.
-- **Don't quote deprecation or shutoff dates.** Clever hasn't published a sunset date.
+- **Don't quote any other deprecation or shutoff dates.** January 2028 is the only confirmed date, and it applies to all of v2 (v2.0 and v2.1).
 - Partners choose the version in the request URL (for example `/v3.1/users`) and should always use an explicit version. The Hall Monitor "Default" column doesn't affect API calls, but it does set which Data Browser version the app sees.
 - "Version not supported" means that version isn't enabled for that client ID. Confirm the client ID first, then transfer to PE.
 

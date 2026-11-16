@@ -34,7 +34,8 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 
 - A hidden app can still receive a request through its direct add-application URL (see APP-03). PE can also make an app non-searchable and non-requestable for all but one invited district. That needs PE and isn't offered proactively.
 - A dev app listed in the public App Gallery by mistake is a PE follow-up. The production app is visible in the district dashboard and searchable (03082752).
-**Source cases:** 03082752, 03054351, 02980147, 03085062, 03084129, 03073948, 03038841, 03051820, 03067801, 03032100
+- When a partner was merging two products into one app, the account manager offered a bulk invite campaign to move districts to the remaining app and to hide the retiring app during the transition. That's an ASM conversation; route consolidation requests to the ASM (03106748).
+**Source cases:** 03082752, 03054351, 02980147, 03085062, 03084129, 03073948, 03038841, 03051820, 03067801, 03032100, 03106748
 
 ---
 

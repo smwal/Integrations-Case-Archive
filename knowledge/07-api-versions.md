@@ -1,7 +1,7 @@
 # API versions
 
 Covers this Salesforce bucket: Developer Support > Versions, plus version questions from Troubleshooting - Other.
-Source: resolved integrations@clever.com cases. Every entry is a draft until PE has reviewed it. New apps get v3.0, v3.1 is turned on by request through PE, and never quote deprecation dates.
+Source: resolved integrations@clever.com cases. Every entry is a draft until PE has reviewed it. New apps get v3.0, v3.1 is turned on by request through PE, and the only deprecation date to give is that v2 (including v2.1) sunsets in January 2028.
 
 ---
 
@@ -26,7 +26,7 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 
 **Notes / conflicts**
 - New apps get v3.0; v3.1 is turned on by request through PE. Partners should always put an explicit version in the request URL.
-- Never quote a v2 deprecation or end-of-life date. Some older CSM/ASM emails in these cases quoted dates, and the dates didn't agree with each other. Don't repeat them.
+- The only v2 date to give is that v2 (including v2.1) sunsets in January 2028. Give it as month and year only. Some older CSM/ASM emails in these cases quoted other dates, and the dates didn't agree with each other. Don't repeat them.
 - One older case helped a partner build Events processing on v2.1 without mentioning v3. v2 is deprecated for new apps.
 - A "version not supported" (code 600) error can also mean v3.1 is turned on for the dev app but not for the production app. Confirm which client ID and token the partner is using before transferring to PE (03077144).
 - PE turns on v3.1 for the app you name, so say whether it's for dev, production or both (03002235).
@@ -60,13 +60,15 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 **Notes / conflicts**
 - PE told one partner the new demographic fields are only available to Secure Sync apps. Other app types can still get v3.1 but won't see those fields.
 - v3.1 adds the LMS Connect APIs and the extra demographic fields. An SSO or identity-only partner can stay on v3.0 (03081977).
-- One ASM asked partners to commit to v3.1 by tying it to a v2 end date. Never repeat deadline language.
+- One ASM asked partners to commit to v3.1 by tying it to a v2 end date. Don't repeat that deadline language. Stick to "v2 sunsets in January 2028" and don't add other deadlines or commitments.
 - See ROS-06 for which fields are gated by scopes and which by v3.1.
 
 - A "Version Not Supported" error on one app after v3.1 was turned on for others usually means that app's client ID was missed. PE enables v3.1 per app, so confirm each client ID.
 
+- PE asked for the app ID or client ID, then enabled v3.1 on both the dev/sandbox and production apps. Some partners submit a v3.1 upgrade form from an account-manager email and later ask whether it was received; PE confirmed receipt and enabled v3.1 (03122465, 03120400).
+- An account manager told one partner the Data Browser version picker remembers the last version viewed. That isn't confirmed. The app's default version setting (set by PE) decides which version the Data Browser shows, and API calls always use the version in the URL (03120400).
 **Links:** https://dev.clever.com/docs/api-v31 · https://dev.clever.com/docs/api-v3-upgrade-guide
-**Source cases:** 03007759, 03009671, 03051380, 03081977, 03083377, 03116247, 03119332
+**Source cases:** 03007759, 03009671, 03051380, 03081977, 03083377, 03116247, 03119332, 03120400, 03122465
 
 ---
 
@@ -78,10 +80,10 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 - A CSM or ASM has told a partner their app still makes v2 calls and PE is asked to help.
 
 **Answer / steps**
-1. Don't give any date. Clever hasn't published a sunset date.
-2. Say v2 is deprecated, new apps can't use it, existing apps are still supported, and upgrading to v3 is recommended. Clever is moving partners from v2 to v3, and it no longer certifies apps built on v2.
+1. The only date to give is January 2028: v2 (including v2.0 and v2.1) sunsets then. Say "January 2028" only, with no exact day, and don't give any other date.
+2. Say v2 is deprecated, new apps can't use it, existing apps are still supported until the sunset, and upgrading to v3 is recommended. Clever is moving partners from v2 to v3, and it no longer certifies apps built on v2.
 
-> Thanks for asking! v2 is deprecated, so we recommend moving to v3. Existing apps are still supported, but I can't give you a date. Our upgrade guide covers the changes, and our Partner Engineering team can help you plan the move. If you share your target timeline, they can also pull a report of the v2 calls your app is making.
+> Thanks for asking! v2 is deprecated, so we recommend moving to v3. Existing apps are still supported until v2 sunsets in January 2028. Our upgrade guide covers the changes, and our Partner Engineering team can help you plan the move. If you share your target timeline, they can also pull a report of the v2 calls your app is making.
 
 3. Facts PE gave partners that you can relay:
    - Districts don't need to do anything for the app to move to v3. They may need to sync data to Clever only if the partner wants new v3 fields (such as 504 status).
@@ -91,17 +93,19 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 
 **Escalate if…**
 - The partner wants a v2 call log or help scoping migration work.
-- The partner asks for written confirmation of any date. Say you can't provide one, and loop in PE and the ASM.
+- The partner asks for an exact day or written confirmation of the date. Say January 2028 is the date you can share, and loop in PE and the ASM.
 - The partner asks whether a v4 is planned. PE once said there were no plans, but don't repeat that as a promise.
 
 **Notes / conflicts**
-- Older cases said there was no plan to deprecate v2.1, or quoted end dates that didn't agree with each other. Neither is correct to repeat. Give the answer above only.
+- Older cases said there was no plan to deprecate v2.1, or quoted end dates that didn't agree with each other. Neither is correct to repeat. v2.1 is included in the January 2028 sunset. Give the answer above only.
 - One older case said only the contacts endpoints were deprecated. v2 overall is deprecated.
 - Billing and contract details sit in some of these threads. Leave them out and route to the ASM.
 
 - v2 and v3 can run side by side during migration. A partner shouldn't turn off v2 calls until the same calls work on v3, and should test in a dev app first (03045665). Enabling v3 doesn't change anything for districts (03060600).
+- A partner who believed it had fully moved to v3 was still making v2 calls. PE could see which endpoint (in this case v2 `/me`) and shared it. If a partner asks which v2 calls remain, transfer to PE (03114137).
+- Recent account-manager outreach quoted a January 2028 v2 end date, which matches the date to give. Don't add any other dates.
 **Links:** https://dev.clever.com/docs/api-v3-upgrade-guide
-**Source cases:** 03060600, 03045665, 02972640, 02979711, 03037042, 03078710, 03078725, 03078801, 03078978, 03083590, 03090792, 03105518
+**Source cases:** 03060600, 03045665, 02972640, 02979711, 03037042, 03078710, 03078725, 03078801, 03078978, 03083590, 03090792, 03105518, 03114137
 
 ---
 
@@ -127,7 +131,7 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 **Notes / conflicts**
 - The Clever ID must be the primary key to be certified. Never recommend email as the main key.
 
-- v2 contacts partners: in v3 contacts get the multi-role user ID, students keep their ID (the v2 ID appears as `legacy_id`), and `/users/{id}/mycontacts` works with the student ID (03000078). Point to the v3 docs and never quote dates.
+- v2 contacts partners: in v3 contacts get the multi-role user ID, students keep their ID (the v2 ID appears as `legacy_id`), and `/users/{id}/mycontacts` works with the student ID (03000078). Point to the v3 docs. The only date to give is the January 2028 v2 sunset.
 **Links:** https://dev.clever.com/docs/users · https://dev.clever.com/docs/new-in-api-v3 · https://dev.clever.com/docs/api-v3-upgrade-guide · https://dev.clever.com/docs/api-v31
 **Source cases:** 02997258, 03014599, 03000078, 03072620, 03083855, 03081977, 03085732, 03105518
 

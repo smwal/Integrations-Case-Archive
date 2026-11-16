@@ -71,8 +71,9 @@ Source: resolved integrations@clever.com cases. Every entry is a draft until PE 
 - Matchmaker is Secure Sync only.
 
 - Custom metadata fields (race, ethnicity, ELL, FRL, IEP, home language) aren't supported in the OneRoster 1.1 export. A district moving to OneRoster 1.2 is a sync conversion, so it goes to Clever Support only (03065317, 03056269).
+- Two active teacher records for one person usually means the district deleted and re-added the teacher in its SIS, or the SIS has a duplicate entry. That's a district data issue: the partner contacts Clever Support (looping in the district) so Support can work with the district on cleanup. PE used this to stress keeping the Clever ID as the primary key, since district emails aren't guaranteed unique (03118124).
 **Links:** https://dev.clever.com/docs/onboarding · https://dev.clever.com/docs/users · https://dev.clever.com/docs/data-model-quirks-and-supported-features-district-integrations
-**Source cases:** 03007656, 02987272, 03007300, 03045513, 03040052, 03075117, 03069734
+**Source cases:** 03007656, 02987272, 03007300, 03045513, 03040052, 03075117, 03069734, 03118124
 
 ---
 
